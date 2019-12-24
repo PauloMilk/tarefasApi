@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-title>Redefinicao de senha</mat-card-title>
+  <mat-card-content>
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+      <p>
+        <mat-form-field>
+          <input type="email" matInput placeholder="Email" name="email" [(ngModel)]="usuario.email" required>
+        </mat-form-field>
+      </p>
+
+      <p *ngIf="error.length > 0" class="error">
+        <ng-container *ngFor="let erro of error">
+          <span >- {{erro}}</span><br />
+        </ng-container>
+
+      </p>
+      <p *ngIf="sucesso" class="sucesso">
+        {{ sucesso }}
+      </p>
+
+      <div class="button">
+        <button type="submit" mat-button>Solicitar</button>
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>

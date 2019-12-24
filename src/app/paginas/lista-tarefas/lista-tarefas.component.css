@@ -1,0 +1,84 @@
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.mt-3 {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+}
+
+.pb-3 {
+  padding-bottom: 10px;
+}
+
+.centre {
+  text-align: center
+}
+
+
+.mat-column-descricao {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+ /* flex: 0 0 200px !important; */
+  width: 300px !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  padding-right: 20px;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-status {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+ /* flex: 0 0 200px !important; */
+  width: 150px !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  padding-right: 20px;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+

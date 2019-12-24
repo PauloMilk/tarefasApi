@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title>{{ ativado ? sucesso : 'Ativacao de conta'}}</mat-card-title>
+  <mat-divider></mat-divider>
+  <br>
+  <mat-card-content>
+    <form #f="ngForm" (ngSubmit)="onSubmit()" >
+
+      <div class="button">
+        <button *ngIf="!ativado && erro == null" mat-flat-button color="primary" type="submit">Ativar Conta</button>
+        <button *ngIf="ativado" mat-flat-button color="primary" routerLink="/">Ir para Login</button>
+      </div>
+
+      <div *ngIf="erro" class="error">
+       {{erro}}
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>

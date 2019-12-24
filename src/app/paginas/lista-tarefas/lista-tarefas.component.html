@@ -1,0 +1,54 @@
+<div class="container mt-3 pb-3">
+
+  <div [hidden]="data.length === 0" class="mat-elevation-z8">
+    <mat-table [dataSource]="data">
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef class="centre"> Ações </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="centre">
+
+            <button mat-icon-button color="warn" (click)="openConfirmDelete(element.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" (click)="openTask(element.id, element.descricao, element.status)">
+              <mat-icon>edit</mat-icon>
+            </button>
+
+        </mat-cell>
+      </ng-container>
+      <!-- Position Column -->
+      <ng-container matColumnDef="descricao" >
+        <mat-header-cell *matHeaderCellDef [ngClass]="'customWidthClass'"> Descricao </mat-header-cell>
+        <mat-cell  *matCellDef="let element" [ngClass]="'customWidthClass'">{{element.descricao}}</mat-cell>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="status">
+        <mat-header-cell  *matHeaderCellDef> Status </mat-header-cell>
+        <mat-cell  *matCellDef="let element"> {{status}} </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="dataCriacao">
+        <mat-header-cell  *matHeaderCellDef> Data de Criacao </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.dataCriacao | date: 'dd/MM/yyyy HH:mm:ss' }} </mat-cell>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="dataAtualizacao">
+        <mat-header-cell  *matHeaderCellDef> Data de Atualizacao </mat-header-cell>
+        <mat-cell  *matCellDef="let element"> {{element.dataAtualizacao | date: 'dd/MM/yyyy HH:mm:ss' }} </mat-cell>
+      </ng-container>
+
+
+
+      <mat-header-row  *matHeaderRowDef="displayedColumns;"></mat-header-row>
+      <mat-row  *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator [length]="resultsLength" [pageSize]="5"></mat-paginator>
+  </div>
+  <div *ngIf="data.length === 0">
+    <mat-card class="centre">Nenhuma tarefa encontrada!</mat-card>
+  </div>
+</div>

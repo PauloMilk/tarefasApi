@@ -1,0 +1,33 @@
+
+<h2 class="text-center">QUADRO PESSOAL</h2>
+ <mat-divider></mat-divider>
+<mat-tab-group mat-stretch-tabs  mat-align-tabs="center"  [@.disabled]="true">
+  <mat-tab label="TO DO">
+    <ng-template matTabContent>
+      <app-lista-tarefas [status]="'TO DO'"></app-lista-tarefas>
+    </ng-template>
+  </mat-tab>
+
+  <mat-tab label="DOING">
+    <ng-template matTabContent>
+      <app-lista-tarefas [status]="'DOING'"></app-lista-tarefas>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="BLOCKED">
+    <ng-template matTabContent>
+      <app-lista-tarefas [status]="'BLOCKED'"></app-lista-tarefas>
+    </ng-template>
+  </mat-tab>
+
+  <mat-tab label="QA">
+    <ng-template matTabContent>
+      <app-lista-tarefas [status]="'QA'"></app-lista-tarefas>
+    </ng-template>
+  </mat-tab>
+
+  <mat-tab label="DONE">
+    <ng-template matTabContent>
+      <app-lista-tarefas [status]="'DONE'"></app-lista-tarefas>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<mat-divider></mat-divider>
+<div mat-dialog-content>
+  <div class="example-container pt-2">
+    <mat-form-field>
+      <textarea matInput placeholder="Descrição" [(ngModel)]="data.tarefa.descricao" maxlength="200" rows="5"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Status" [(ngModel)]="data.tarefa.status">
+        <mat-option value="TODO" SLE>TO DO</mat-option>
+        <mat-option value="DOING">DOING</mat-option>
+        <mat-option value="BLOCKED">BLOCKED</mat-option>
+        <mat-option value="QA">QA</mat-option>
+        <mat-option value="DONE">DONE</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button cdkFocusInitial (click)="onSubmit()">Salvar</button>
+</div>

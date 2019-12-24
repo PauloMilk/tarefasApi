@@ -1,0 +1,41 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <mat-icon routerLink="/">note</mat-icon>
+    <span routerLink="/">Task App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <div *ngIf="!autenticado">
+        <button mat-menu-item routerLink="/">
+          <mat-icon>fingerprint</mat-icon>
+          <span>Login</span>
+        </button>
+
+        <button mat-menu-item routerLink="/cadastre-se">
+          <mat-icon>account_circle</mat-icon>
+          <span>Cadastre-se</span>
+        </button>
+      </div>
+
+      <div *ngIf="autenticado">
+        <button mat-menu-item (click)="openTask()">
+          <mat-icon>add_box</mat-icon>
+          <span>Nova Task</span>
+        </button>
+        <button mat-menu-item routerLink="/">
+          <mat-icon>account_circle</mat-icon>
+          <span>Minha Conta</span>
+        </button>
+
+        <button mat-menu-item (click)="sair()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Sair</span>
+        </button>
+      </div>
+
+
+    </mat-menu>
+
+  </mat-toolbar-row>
